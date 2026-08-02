@@ -86,7 +86,7 @@ While the current MPC architecture provides a robust baseline for path-tracking,
 *   **Real-Time 3D Simulation:** Porting the mathematical control logic into a real-time interactive environment, utilizing custom vehicle physics and skeletal meshes to evaluate the driver-in-the-loop response with direct visual feedback.
 *   **Adaptive MPC Implementation:** Upgrading the static linear controller to an Adaptive Model Predictive Controller (AMPC) to dynamically update the plant's defining state-space matrices at each discrete time step.
 *   **Custom Solver Development:** Transitioning from standard library blocks to a fully proprietary, in-house coded MPC algorithm tailored specifically for our processing constraints and vehicle parameters.
-*   ** Lap Time:** Improving the 6 seconds Lap Time for the Skid Pad Event, as this time is far from being ideal.
+*   **Lap Time:** Improving the 6 seconds Lap Time for the Skid Pad Event, as this time is far from being ideal.
 
 <style>
   footer { display: none !important; }
