@@ -14,7 +14,12 @@ title: Michele Marcon | Mechanical Engineer
 *   **Feedforward Calibration:** Designed and integrated a steering feedforward logic to enhance the predictive response of the path-tracking algorithm. Restructured the variable calculation loops, resolving an inactive conditional block to guarantee uninterrupted feedforward data transmission during high-dynamic maneuvering.
 *   **Simulation & Validation:** Deployed the integrated controller within a driver-in-the-loop environment to evaluate transient vehicle behavior and dynamic stability under simulated track conditions.
 
+### MPC Architecture & Theoretical Foundation
+
+A key defining factor of this project was the decision to develop the control architecture entirely from scratch, bridging fundamental vehicle dynamics theory with advanced control system implementation.
+
 **Theoretical Framework & Literature**
+
 Rather than relying on pre-packaged driver models, the predictive algorithm was mathematically derived from core literature. The control logic and plant matrices were built following established methodologies from:
 *   *[MathWorks Website]* - Referenced for structuring the objective function and prediction horizon tuning within the MPC framework.
 *   *[Vehicle Dynamics and Control by R. Rajamani]* - Utilized for defining the state-space formulation of the lateral dynamics.
@@ -50,11 +55,7 @@ This plot illustrates the alignment deviation between the vehicle's actual headi
 
 *Fig.4: Steering input command (rad).*
 
-The steering command output confirms that the feedforward logic generates smooth, realistic driver inputs. Measured in radians, the values remain well within the physical actuation limits of a standard Formula Student steering rack, preventing actuator saturation and erratic dynamic responses.
-
-### MPC Architecture & Theoretical Foundation
-
-A key defining factor of this project was the decision to develop the control architecture entirely from scratch, bridging fundamental vehicle dynamics theory with advanced control system implementation. 
+The steering command output confirms that the feedforward logic generates smooth, realistic driver inputs. Measured in radians, the values remain well within the physical actuation limits of a standard Formula Student steering rack, preventing actuator saturation and erratic dynamic responses. 
 
 ### Limitations & Future Developments
 
