@@ -26,13 +26,16 @@ To validate the controller's effectiveness under high-dynamic maneuvering, the s
 
 ![Lateral Tracking Error](lateral%20error.png)
 *Fig.2: Lateral cross-track error distribution for a Formula Student Skid Pad event (m).*
+
 The lateral error remains tightly bounded throughout the simulation. This demonstrates the MPC's predictive capability to hold the designated racing line and optimally manage slip angles, even during aggressive transient cornering phases.
 
 ![Yaw Angle Error](yae%20error.png)
 *Fig.3: Yaw Heading Error (rad).*
+
 This plot illustrates the alignment deviation between the vehicle's actual heading and the target path. Minimizing this specific metric is critical for maintaining lateral stability and mitigating unintended oversteer scenarios during mid-corner transitions.
 
 ![Steering Input](steer.png)
 *Fig.4: Steering input command (rad).*
+
 The steering command output confirms that the feedforward logic generates smooth, realistic driver inputs. Measured in radians, the values remain well within the physical actuation limits of a standard Formula Student steering rack, preventing actuator saturation and erratic dynamic responses.
 
