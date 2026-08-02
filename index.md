@@ -54,3 +54,12 @@ The development process deliberately separated the physical vehicle plant from t
 1.  **Solving the Optimization Problem:** Calculating optimal steering angles by minimizing the cost function over a defined prediction horizon, strictly adhering to track boundary constraints.
 2.  **Handling Actuator Limits:** Explicitly integrating physical steering constraints (rate and angle limits) into the MPC solver to ensure the generated commands are physically executable by the vehicle's steering rack.
 3.  **Future State Prediction:** Utilizing the internally coded 4-state mathematical model to predict the vehicle's lateral deviation and yaw error, allowing the algorithm to preemptively react to upcoming trajectory curvatures.
+
+### Limitations & Future Developments
+
+While the current MPC architecture provides a robust baseline for path-tracking, the driver model is part of an ongoing iterative development process. Targeted areas for future improvement include:
+
+*   **Combined Slip Management:** Expanding the control logic to concurrently manage lateral and longitudinal slip ratios, fully integrating the steering MPC with dedicated traction and launch control architectures.
+*   **Real-Time 3D Simulation:** Porting the mathematical control logic into a real-time interactive environment, utilizing custom vehicle physics and skeletal meshes to evaluate the driver-in-the-loop response with direct visual feedback.
+*   **Adaptive MPC:** Replacing the current MPC Controller with an adaptive one whiche refreshes at every loop the defining matrices.
+*   **In-House MPC:** Coding our own MPC Controller.
