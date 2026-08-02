@@ -40,3 +40,17 @@ This plot illustrates the alignment deviation between the vehicle's actual headi
 
 The steering command output confirms that the feedforward logic generates smooth, realistic driver inputs. Measured in radians, the values remain well within the physical actuation limits of a standard Formula Student steering rack, preventing actuator saturation and erratic dynamic responses.
 
+### MPC Architecture & Theoretical Foundation
+
+A key defining factor of this project was the decision to develop the control architecture entirely from scratch, bridging fundamental vehicle dynamics theory with advanced control system implementation. 
+
+**Theoretical Framework & Literature**
+Rather than relying on pre-packaged driver models, the predictive algorithm was mathematically derived from core literature. The control logic and plant matrices were built following established methodologies from:
+*   *[MathWorks Website]* - Referenced for structuring the objective function and prediction horizon tuning within the MPC framework.
+*   *[Vehicle Dynamics and Control by R. Rajamani]* - Utilized for defining the state-space formulation of the lateral dynamics.
+
+**From Scratch Implementation**
+The development process deliberately separated the physical vehicle plant from the driver model. By focusing heavily on the driver-side algorithm, we established a robust Model Predictive Controller capable of:
+1.  **Solving the Optimization Problem:** Calculating optimal steering angles by minimizing the cost function over a defined prediction horizon, strictly adhering to track boundary constraints.
+2.  **Handling Actuator Limits:** Explicitly integrating physical steering constraints (rate and angle limits) into the MPC solver to ensure the generated commands are physically executable by the vehicle's steering rack.
+3.  **Future State Prediction:** Utilizing the internally coded 4-state mathematical model to predict the vehicle's lateral deviation and yaw error, allowing the algorithm to preemptively react to upcoming trajectory curvatures.
