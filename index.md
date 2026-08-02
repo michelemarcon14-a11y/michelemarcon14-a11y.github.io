@@ -52,7 +52,7 @@ To validate the controller's effectiveness under high-dynamic maneuvering, the s
 </div>
 <br>
 
-The lateral error remains tightly bounded throughout the simulation. This demonstrates the MPC's predictive capability to hold the designated racing line and optimally manage slip angles, even during aggressive transient cornering phases.
+The lateral error remains tightly bounded throughout the simulation, peaking at approximately **0.15 m (15 cm)** during critical transition phases. This high-precision tracking demonstrates the MPC's capability to hold the designated racing line and optimally manage slip angles, even during aggressive transient cornering.
 
 <div align="center">
   <img src="yae%20error.png" width="70%">
@@ -61,7 +61,7 @@ The lateral error remains tightly bounded throughout the simulation. This demons
 </div>
 <br>
 
-This plot illustrates the alignment deviation between the vehicle's actual heading and the target path. Minimizing this specific metric is critical for maintaining lateral stability and mitigating unintended oversteer scenarios during mid-corner transitions.
+This plot illustrates the alignment deviation between the vehicle's actual heading and the target path, successfully constrained to **0.05 radians (less than 3 degrees)** during cornering and to **0.12 radians (~7 degrees)** during critical transition phases. Minimizing this specific metric is critical for maintaining lateral stability and mitigating unintended oversteer scenarios during mid-corner transitions.
 
 <div align="center">
   <img src="steer.png" width="70%">
@@ -71,6 +71,11 @@ This plot illustrates the alignment deviation between the vehicle's actual headi
 <br>
 
 The steering command output confirms that the predictive logic generates smooth, realistic driver inputs. Measured in radians, the values remain well within the physical actuation limits of a standard Formula Student steering rack, preventing actuator saturation and erratic dynamic responses. 
+
+### Lap Time Analysis & Iterative Tuning
+
+Beyond pure trajectory tracking, a custom lap-timing logic was integrated directly into the simulation loop. This tool precisely calculates lap times across the generated trajectories, establishing a robust, data-driven baseline. The ultimate goal of this environment is to evaluate how iterative modifications to the vehicle's physical parameters (e.g., suspension setups, track width adjustments, or mass distribution) directly impact overall track performance, allowing for rapid virtual prototyping before physical manufacturing.
+Right now the car is able to lap one circle in 6 seconds at aproximently 9.4 m/s, highlighting how the MPC is working correctly but the there's still room for improvement. 
 
 ### Limitations & Future Developments
 
