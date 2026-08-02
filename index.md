@@ -10,9 +10,21 @@ title: Michele Marcon | Mechanical Engineer
 
 **Technical Implementation:**
 *   **Plant Architecture:** Structured a 4-state single-track vehicle dynamics model in MATLAB, defining the state-space matrices through precise parameterization of vehicle mass, yaw inertia, and tire cornering stiffness.
-*   **Control Logic Integration:** Implemented a Model Predictive Control (MPC) algorithm for optimal trajectory tracking, functioning in tandem with a PID controller to govern longitudinal dynamics.
+*   **Control Logic Integration:** Implemented a Model Predictive Control (MPC) algorithm for optimal trajectory tracking, functioning in tandem with a PID controller to govern the throttle pedal and braking one.
 *   **Feedforward Calibration:** Designed and integrated a steering feedforward logic to enhance the predictive response of the path-tracking algorithm. Restructured the variable calculation loops, resolving an inactive conditional block to guarantee uninterrupted feedforward data transmission during high-dynamic maneuvering.
 *   **Simulation & Validation:** Deployed the integrated controller within a driver-in-the-loop environment to evaluate transient vehicle behavior and dynamic stability under simulated track conditions.
+
+**Theoretical Framework & Literature**
+Rather than relying on pre-packaged driver models, the predictive algorithm was mathematically derived from core literature. The control logic and plant matrices were built following established methodologies from:
+*   *[MathWorks Website]* - Referenced for structuring the objective function and prediction horizon tuning within the MPC framework.
+*   *[Vehicle Dynamics and Control by R. Rajamani]* - Utilized for defining the state-space formulation of the lateral dynamics.
+
+**From Scratch Implementation**
+The development process deliberately separated the physical vehicle plant from the driver model. By focusing heavily on the driver-side algorithm, we established a robust Model Predictive Controller capable of:
+1.  **Solving the Optimization Problem:** Calculating optimal steering angles by minimizing the cost function over a defined prediction horizon, strictly adhering to track boundary constraints.
+2.  **Handling Actuator Limits:** Explicitly integrating physical steering constraints (rate and angle limits) into the MPC solver to ensure the generated commands are physically executable by the vehicle's steering rack.
+3.  **Future State Prediction:** Utilizing the internally coded 4-state mathematical model to predict the vehicle's lateral deviation and yaw error, allowing the algorithm to preemptively react to upcoming trajectory curvatures.
+
 ### System Architecture & Control Layout
 
 ![Simulink Plant and Control Architecture](modello%20completo.png)
@@ -44,22 +56,12 @@ The steering command output confirms that the feedforward logic generates smooth
 
 A key defining factor of this project was the decision to develop the control architecture entirely from scratch, bridging fundamental vehicle dynamics theory with advanced control system implementation. 
 
-**Theoretical Framework & Literature**
-Rather than relying on pre-packaged driver models, the predictive algorithm was mathematically derived from core literature. The control logic and plant matrices were built following established methodologies from:
-*   *[MathWorks Website]* - Referenced for structuring the objective function and prediction horizon tuning within the MPC framework.
-*   *[Vehicle Dynamics and Control by R. Rajamani]* - Utilized for defining the state-space formulation of the lateral dynamics.
-
-**From Scratch Implementation**
-The development process deliberately separated the physical vehicle plant from the driver model. By focusing heavily on the driver-side algorithm, we established a robust Model Predictive Controller capable of:
-1.  **Solving the Optimization Problem:** Calculating optimal steering angles by minimizing the cost function over a defined prediction horizon, strictly adhering to track boundary constraints.
-2.  **Handling Actuator Limits:** Explicitly integrating physical steering constraints (rate and angle limits) into the MPC solver to ensure the generated commands are physically executable by the vehicle's steering rack.
-3.  **Future State Prediction:** Utilizing the internally coded 4-state mathematical model to predict the vehicle's lateral deviation and yaw error, allowing the algorithm to preemptively react to upcoming trajectory curvatures.
-
 ### Limitations & Future Developments
 
 While the current MPC architecture provides a robust baseline for path-tracking, the driver model is part of an ongoing iterative development process. Targeted areas for future improvement include:
 
 *   **Combined Slip Management:** Expanding the control logic to concurrently manage lateral and longitudinal slip ratios, fully integrating the steering MPC with dedicated traction and launch control architectures.
+*   **Spikes in the simulation:** Improving the simulation by deleting those spikes at the changing direction from one circle to the other one. 
 *   **Real-Time 3D Simulation:** Porting the mathematical control logic into a real-time interactive environment, utilizing custom vehicle physics and skeletal meshes to evaluate the driver-in-the-loop response with direct visual feedback.
-*   **Adaptive MPC:** Replacing the current MPC Controller with an adaptive one whiche refreshes at every loop the defining matrices.
+*   **Adaptive MPC:** Replacing the current MPC Controller with an adaptive one which refreshes at every loop the defining matrices.
 *   **In-House MPC:** Coding our own MPC Controller.
