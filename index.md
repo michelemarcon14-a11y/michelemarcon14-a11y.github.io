@@ -20,7 +20,7 @@ title: Michele Marcon | Mechanical Engineer
 
 **Architecture Rationale:** The environment was developed to bridge the gap between theoretical path-tracking and real-world testing. By structuring a modular 4-state single-track plant, the setup allows for the safe, repeatable evaluation of transient vehicle dynamics prior to physical track deployment. The signal routing strictly enforces double precision data type conversions throughout the control loops, guaranteeing mathematical consistency between the predictive algorithms and the continuous physical states of the vehicle model.
 
-### Dynamci Validation & Tracking Performance
+### Dynamic Validation & Tracking Performance
 
 To validate the controller's effectiveness under high-dynamic maneuvering, the system was subjected to simulated track layouts. The plots ent color coding for lead and follow trajectory elements, ensuring immediate visual feedback on controller accuracy.
 
@@ -35,6 +35,7 @@ The lateral error remains tightly bounded throughout the simulation. This demons
 This plot illustrates the alignment deviation between the vehicle's actual heading and the target path. Minimizing this specific metric is critical for maintaining lateral stability and mitigating unintended oversteer scenarios during mid-corner transitions.
 
 ![Steering Input](steer.png)
+
 *Fig.4: Steering input command (rad).*
 
 The steering command output confirms that the feedforward logic generates smooth, realistic driver inputs. Measured in radians, the values remain well within the physical actuation limits of a standard Formula Student steering rack, preventing actuator saturation and erratic dynamic responses.
