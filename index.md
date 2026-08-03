@@ -88,6 +88,8 @@ While the current MPC architecture provides a robust baseline for path-tracking,
 *   **Custom Solver Development:** Transitioning from standard library blocks to a fully proprietary, in-house coded MPC algorithm tailored specifically for our processing constraints and vehicle parameters.
 *   **Lap Time:** Improving the 6 seconds Lap Time for the Skid Pad Event, as this time is far from being ideal.
 
+**[View the complete MATLAB Project and Simulink models on GitHub](https://github.com/michelemarcon14-a11y/michelemarcon14-a11y.github.io/tree/main/model_MPC)**
+
 <style>
   footer { display: none !important; }
 </style>
