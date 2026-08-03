@@ -8,7 +8,7 @@ To ensure all dependencies and variables are correctly loaded, **do not manually
 1. Clone the repository to your local machine.
 2. Open MATLAB and double-click the `.prj` project file to automatically initialize the environment and load the generic `.tir` tire properties.
 3. **Data Formatting Protocol:** Ensure that any telemetry data imported into the MATLAB workspace is ordered strictly by **COLUMNS** (not rows). The state-space processing and control architecture strictly require column-wise data arrays to function correctly.
-4. Once you're in the folder model_MPC, open the folder named "scripts". Open and run the file "car_data_new_vehicle.m".
+4. Once you're in the folder model_MPC, open the folder named "2026", then the one named "scripts". Open and run the file "car_data_new_vehicle.m".
 5. After that, in the same folder, open and run the file "MPC_script".
 6. Open the main Simulink model (`Vehicle_definitivo_validazione_2.slx`) in the 2026 folder; your focus is the driver in the loop subsystem, comment the others. click **Run**.
 
