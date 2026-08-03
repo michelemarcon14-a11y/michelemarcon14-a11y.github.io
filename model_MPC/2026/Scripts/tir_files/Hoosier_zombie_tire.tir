@@ -1,0 +1,248 @@
+
+$------------------------------------------------------------------mdi_header
+[MDI_HEADER]
+FILE_TYPE                    = 'tir'             
+FILE_VERSION                 = 3                 
+FILE_FORMAT                  = 'ASCII'           
+$-----------------------------------------------------------------units
+[UNITS]
+LENGTH                       = 'meter'           
+FORCE                        = 'newton'          
+ANGLE                        = 'radians'         
+MASS                         = 'kg'              
+TIME                         = 'second'          
+PRESSURE                   = 'pascal'            
+$-----------------------------------------------------------------model
+[MODEL]
+PROPERTY_FILE_FORMAT       = 'PAC2002'            $Tire property type
+USE_MODE                   = 14.000000            $Tire use switch (IUSED)
+LONGVL                     = 10.000000            $Measurement speed
+VXLOW                      = 1.000000             $Below this speed forces are scaled down
+TYRESIDE                   = 'LEFT'              $Mounted side of tire at vehicle/test bench
+BELT_DYNAMICS              = 'NO'                 $For switching on belt dynamics
+CONTACT_MODEL              = 'DEFAULT'            $Defines type of contact with the road
+FE_METHOD                  = 'NO'                 $For switching to Friction ellipse for combined slip
+LOCAL_SOLVER               = 'NO'                 $For using the local tire solver (default setting)
+LOCAL_SOLVER_HP            = 'YES'                $For using the local tire solver (HP  setting)
+FITTYP                       = 61                
+$---------------------------------------------------------------tire_conditions
+[TIRE_CONDITIONS]
+IP                         = 83000.000000         $Inflation Pressure
+IP_NOM                     = 83000.000000         $Nominal Inflation Pressure
+$-------------------------------------------------------------dimension
+[DIMENSION]
+UNLOADED_RADIUS              = 0.2286            
+WIDTH                        = 0.1524            
+ASPECT_RATIO                 = 0.400000             $Nominal aspect ratio
+RIM_RADIUS                   = 0.127             
+RIM_WIDTH                    = 0.1778            
+BOTTOMING_RADIUS             = 0.127000             $Radius at which the rim hits the road            
+$--------------------------------------------------------------vertical
+[VERTICAL]
+VERTICAL_STIFFNESS         = 111169.017674        $Tire vertical stiffness   
+VERTICAL_DAMPING           = 500.000000           $Tire vertical damping	 
+DREFF                      = 0.338812             $Peak value of e.r.r.
+BREFF                      = 2.932583             $Low load stiffness e.r.r.
+FREFF                      = -0.117176            $High load stiffness e.r.r.
+FNOMIN                       = 1110              
+DYNAMIC_STIFFNESS          = 0.000000             $Dynamic stiffness rate
+DYNAMIC_DAMPING            = 0.000000             $Dynamic damping
+$--------------------------------------------------vertical force range
+[VERTICAL_FORCE_RANGE]
+FZMIN                      = -16.210000           $Minimum allowed wheel load
+FZMAX                      = 1235.690000          $Maximum allowed wheel load
+$-------------------------------------------------------long slip range
+[LONG_SLIP_RANGE]
+KPUMIN                     = -0.261000            $Minimum valid wheel slip
+KPUMAX                     = 0.241000             $Maximum valid wheel slip
+$------------------------------------------------------slip angle range
+[SLIP_ANGLE_RANGE]
+ALPMIN                     = -0.214745            $Minimum valid slip angle
+ALPMAX                     = 0.214047             $Maximum valid slip angle
+$-----------------------------------------------inclination angle range
+[INCLINATION_ANGLE_RANGE]
+CAMMIN                     = -0.000785            $Minimum valid camber angle
+CAMMAX                     = 0.070337             $Maximum valid camber angle
+$--------------------------------------------------scaling coefficients
+[SCALING_COEFFICIENTS]
+LFZO                         = 1                 
+LCX                          = 1                 
+LMUX                         = 0.75                 
+LEX                          = 1                 
+LKX                          = 1                 
+LHX                          = 1                 
+LVX                          = 1                 
+LCY                          = 1                 
+LMUY                         = 1                 
+LEY                          = 1                 
+LKY                          = 1                 
+LHY                          = 1                 
+LVY                          = 1                 
+LTR                          = 1                 
+LRES                         = 1                 
+LXAL                         = 1                 
+LYKA                         = 1                 
+LVYKA                        = 1                 
+LS                           = 1                 
+LKYC                         = 1                 
+LKZC                         = 1                 
+LVMX                         = 1                 
+LMX                          = 1                 
+LMY                          = 1                 
+LMP                          = 1                 
+$---------------------------------------------longitudinal coefficients
+[LONGITUDINAL_COEFFICIENTS]
+PCX1                         = 1.5               
+PDX1                         = 2.1367            
+PDX2                         = -0.0164           
+PDX3                         = 6.4597            
+PEX1                         = -0.52719          
+PEX2                         = -2.1204           
+PEX3                         = -0.6              
+PEX4                         = 0.20747           
+PKX1                         = 35.4668           
+PKX2                         = 30                
+PKX3                         = -1.5589           
+PHX1                         = -0.0018895        
+PHX2                         = -0.0002873        
+PVX1                         = 0.043619          
+PVX2                         = -0.030702         
+PPX1                         = -1.54             
+PPX2                         = -2.3396           
+PPX3                         = 0.56201           
+PPX4                         = 2.9172            
+RBX1                         = 19.1971           
+RBX2                         = 16.1525           
+RBX3                         = 564.9946          
+RCX1                         = 1.0547            
+REX1                         = 0.7094            
+REX2                         = 0.8254            
+RHX1                         = -0.0002
+PTX1                         = 0.010000            
+PTX2                         = 0.000000            
+PTX3                         = 0.000000             
+PTX4                         = 0.000000              
+$----------------------------------------------overturning coefficients
+[OVERTURNING_COEFFICIENTS]
+QSX1                         = -0.014307         
+QSX2                         = 1.698             
+QSX3                         = 0.10444           
+QSX4                         = 0.86112           
+QSX5                         = 0                 
+QSX6                         = 0                 
+QSX7                         = 0.076913          
+QSX8                         = 0                 
+QSX9                         = 0                 
+QSX10                        = 0                 
+QSX11                        = 0                 
+QSX12                        = 0                 
+QSX13                        = 0                 
+QSX14                        = 0                 
+PPMX1                        = 0.44312           
+$--------------------------------------------------lateral coefficients
+[LATERAL_COEFFICIENTS]
+PCY1                       = 1.278249             $Shape factor Cfy for lateral forces
+PDY1                       = 2.134762             $Lateral friction Muy
+PDY2                       = -0.410003            $Variation of friction Muy with load
+PDY3                       = 9.088088             $Variation of friction Muy with squared camber
+PEY1                       = -0.080205            $Lateral curvature Efy at Fznom
+PEY2                       = -0.180515            $Variation of curvature Efy with load
+PEY3                       = 0.000000             $Zero order camber dependency of curvature Efy
+PEY4                       = -70.688157           $Variation of curvature Efy with camber
+PKY1                       = -30.412963           $Maximum value of stiffness Kfy/Fznom
+PKY2                       = 1.483243             $Load at which Kfy reaches maximum value
+PKY3                       = 0.845608             $Variation of Kfy/Fznom with camber
+PHY1                       = 0.000000             $Horizontal shift Shy at Fznom
+PHY2                       = 0.000000             $Variation of shift Shy with load
+PHY3                       = 0.156247             $Variation of shift Shy with camber
+PVY1                       = 0.000000             $Vertical shift in Svy/Fz at Fznom
+PVY2                       = 0.000000             $Variation of shift Svy/Fz with load
+PVY3                       = -0.098424            $Variation of shift Svy/Fz with camber
+PVY4                       = -2.985339            $Variation of shift Svy/Fz with camber and load
+PPY1                       = 0.380088             $Variation of  max. stiffness Kfy/Fznom with pressure
+PPY2                       = 1.066431             $Variation of load at max. Kfy with pressure
+PPY3                       = -0.426912            $Variation of friction Muy with pressure
+PPY4                       = 0.000000             $Variation of friction Muy with pressure squared
+RBY1                       = 0.000000             $Variation of shift Svy/Fz with camber and load
+RBY2                       = 0.000000             $Slope factor for combined Fy reduction
+RBY3                       = 0.000000             $Variation of slope Fy reduction with alpha
+RCY1                       = 0.000000             $Shape factor for combined Fy reduction
+RHY1                       = 0.000000             $Shift factor for combined Fy reduction
+RVY1                       = 0.000000             $Kappa induced side force Svyk/Muy*Fz at Fznom
+RVY2                       = 0.000000             $Variation of Svyk/Muy*Fz with load
+RVY3                       = 0.000000             $Variation of Svyk/Muy*Fz with camber
+RVY4                       = 0.000000             $Variation of Svyk/Muy*Fz with alpha
+RVY5                       = 0.000000             $Variation of Svyk/Muy*Fz with kappa
+RVY6                       = 0.000000             $Variation of Svyk/Muy*Fz with atan(kappa)
+REY1                       = 0.000000             $Curvature factor of combined Fy
+REY2                       = 0.000000             $Curvature factor of combined Fy with load
+RHY2                       = 0.000000             $Shift factor for combined Fy reduction with load
+PTY1                       = 0.000000             $Peak value of relaxation length SigAlp0/R0
+PTY2                       = 0.000000             $Value of Fz/Fznom where SigAlp0 is extreme
+PTY3                       = 0.000000             $Artificial damping for low speed
+$--------------------------------------------------rolling coefficients
+[ROLLING_COEFFICIENTS]
+QSY1                         = 0                 
+QSY2                         = 0                 
+QSY3                         = 0                 
+QSY4                         = 0                 
+QSY5                         = 0                 
+QSY6                         = 0                 
+QSY7                         = 0                 
+QSY8                         = 0                 
+$-------------------------------------------------aligning coefficients
+[ALIGNING_COEFFICIENTS]
+QBZ1                         = 0.27947           
+QBZ2                         = -0.030477         
+QBZ3                         = 0.14047           
+QBZ4                         = 42.0747           
+QBZ5                         = -42.1654          
+QBZ9                         = -5.8006           
+QBZ10                        = -0.27821          
+QCZ1                         = 23.5338           
+QDZ1                         = 0.1656            
+QDZ2                         = -0.046787         
+QDZ3                         = 6.0414            
+QDZ4                         = -74.0649          
+QDZ6                         = 0.013624          
+QDZ7                         = -0.053202         
+QDZ8                         = -1.9389           
+QDZ9                         = 5.7039            
+QDZ10                        = 1.4336            
+QDZ11                        = -20.6589          
+QEZ1                         = -27.1067          
+QEZ2                         = -112.1433         
+QEZ3                         = -122.5456         
+QEZ4                         = -1.3351           
+QEZ5                         = 39.206            
+QHZ1                         = 0.012245          
+QHZ2                         = -0.0029894        
+QHZ3                         = -0.45089          
+QHZ4                         = 0.58166           
+PPZ1                         = 0.5               
+PPZ2                         = -2.0475           
+SSZ1                         = -0.047304         
+SSZ2                         = -0.08259          
+SSZ3                         = 0                 
+SSZ4                         = 0                 
+$-------------------------------------------------turnslip coefficients
+[TURNSLIP_COEFFICIENTS]
+PDXP1                        = 0                 
+PDXP2                        = 0                 
+PDXP3                        = 0                 
+PKYP1                        = 0                 
+PDYP1                        = 0                 
+PDYP2                        = 0                 
+PDYP3                        = 0                 
+PDYP4                        = 0                 
+PHYP1                        = 0                 
+PHYP2                        = 0                 
+PHYP3                        = 0                 
+PHYP4                        = 0                 
+PECP1                        = 0                 
+PECP2                        = 0                 
+QDTP1                        = 0                 
+QCRP1                        = 0                 
+QCRP2                        = 0                 
+QBRP1                        = 0                 
+QDRP1                        = 0                 
