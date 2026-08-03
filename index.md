@@ -13,6 +13,15 @@ title: Michele Marcon | Mechanical Engineer
 *   **Control Logic Integration:** Implemented a Model Predictive Control (MPC) algorithm for optimal trajectory tracking, functioning in tandem with a PID controller to govern longitudinal throttle and brake actuation.
 *   **Simulation & Validation:** Deployed the integrated controller within a driver-in-the-loop environment to evaluate transient vehicle behavior and dynamic stability under simulated track conditions.
 
+**Quick Navigation:**
+* [MPC Architecture & Theoretical Foundation](#mpc-architecture--theoretical-foundation)
+* [System Architecture & Control Layout](#system-architecture--control-layout)
+* [Dynamic Validation & Tracking Performance](#dynamic-validation--tracking-performance)
+* [Lap Time Analysis & Iterative Tuning](#lap-time-analysis--iterative-tuning)
+* [Limitations & Future Developments](#limitations--future-developments)
+
+---
+
 ### MPC Architecture & Theoretical Foundation
 
 A key defining factor of this project was the decision to develop the control architecture entirely from scratch, bridging fundamental vehicle dynamics theory with advanced control system implementation.
