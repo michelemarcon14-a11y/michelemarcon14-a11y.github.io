@@ -31,7 +31,7 @@ To evaluate the operational stiffness of the spring, the analytical model was su
 By solving the linear systems for the constraint reactions, the analysis highlighted critical behaviors depending on the number of active coils ($n$):
 
 *   **Asymptotic Stabilization:** The structural influence of the cylindrical constraint (slider) compared to a free spring strongly fluctuates for low coil counts, but stabilizes asymptotically for *n* > 30, where the difference in axial deflection becomes negligible.
-*   **Classic Theory Validation:** When comparing the rigorous mathematical derivation of the free spring with the simplified textbook formulation (assuming small pitch angles and adial loads), the displacement models showed a discrepancy of **less than 1% (ratio of 0.9943)**. This confirms that classical textbook formulations correctly operate with a slight margin of safety.
+*   **Classic Theory Validation:** When comparing the rigorous mathematical derivation of the free spring with the simplified textbook formulation (assuming small pitch angles and axial loads), the displacement models showed a discrepancy of **less than 1% (ratio of 0.9943)**. This confirms that classical textbook formulations correctly operate with a slight margin of safety.
 
 <div align="center">
   <img src="grafici_insieme.png" width="80%">
