@@ -76,11 +76,11 @@ B3 = [  0    ;
         0    ;
       1/Iz]  ;
 
-% Scrittura delle matrici B in una singola 
+% Merging all the matrices in one
 
 B_dyn = [ B1 , B2 , B3 ]; 
 
-C_dyn = eye(4);   % Ora misuriamo 4 stati!
+C_dyn = eye(4);   
 D_dyn = zeros(4,3);
 ```
 
