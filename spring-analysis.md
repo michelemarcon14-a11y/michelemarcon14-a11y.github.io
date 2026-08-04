@@ -19,7 +19,12 @@ To evaluate the operational stiffness of the spring, the analytical model was su
 2.  **Cylindrical Constraint (Slider):** Simulated a standard enclosure (e.g., a suspension cup) negating lateral deflections ($fx=0, fy=0, rx=0, ry=0$).
 3.  **Spherical Joint on Guide:** Allowed rotational freedom while constraining lateral translation.
 
-*(Insert here: A combined image showing your three SolidWorks CAD models of the boundary conditions)*
+<div align="center">
+  <img src="vincoli.png" width="80%">
+  <br>
+  <em>Fig. 1: Simulink layout for MPC & PID Driver-in-the-Loop simulator.</em>
+</div>
+<br>
 
 ### Key Findings & Analytical Results
 
@@ -28,7 +33,12 @@ By solving the linear systems for the constraint reactions, the analysis highlig
 *   **Asymptotic Stabilization:** The structural influence of the cylindrical constraint (slider) compared to a free spring strongly fluctuates for low coil counts, but stabilizes asymptotically for $n > 30$, where the difference in axial deflection becomes negligible.
 *   **Classic Theory Validation:** When comparing the rigorous mathematical derivation of the free spring with the simplified textbook formulation (assuming small pitch angles and adial loads), the displacement models showed a discrepancy of **less than 1% (ratio of 0.9943)**. This confirms that classical textbook formulations correctly operate with a slight margin of safety.
 
-*(Insert here: The logarithmic graph comparing the slider and spherical joint deflection ratios)*
+<div align="center">
+  <img src="grafici_insieme.png" width="80%">
+  <br>
+  <em>Fig. 1: Simulink layout for MPC & PID Driver-in-the-Loop simulator.</em>
+</div>
+<br>
 
 ### Finite Element Method (FEM) Validation
 
@@ -36,7 +46,12 @@ To definitively validate the algebraic model built in WxMaxima, a continuous loa
 
 The comparison of the internal stresses, specifically focusing on the bending moment $Mx$ under a unitary axial load $Fz$, demonstrated an exceptional correlation between the analytical script and the FEM solver. The calculated relative error between the two methodologies peaked at **0.0808%**, fully validating the structural assumptions and the mathematical framework of the project.
 
-*(Insert here: The final graph showing the overlapping WxMaxima and FEM lines)*
+<div align="center">
+  <img src="fem_vs_maxima.png" width="80%">
+  <br>
+  <em>Fig. 1: Simulink layout for MPC & PID Driver-in-the-Loop simulator.</em>
+</div>
+<br>
 
 <br>
 
