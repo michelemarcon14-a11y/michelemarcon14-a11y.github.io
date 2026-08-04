@@ -48,7 +48,7 @@ V = 34/3.6; % Constant speed in [m/s].
 L = 1.54;   % Wheelbase [m]. 
 Cr = 25210; % Cornering stiffness rear [Nm/rad]
 Cf = Cr;    % Cornering stiffness rear [Nm/rad]
-m = 298;    % Veicol mass [Kg]
+m = 298;    % Vehicle mass [Kg]
 lr = 0.722; % Rear wheelbase [m]
 lf = 0.818; % Front wheelbase [m]
 Iz = 134.3; % Yaw inertia [Kg*m^2]
@@ -129,7 +129,7 @@ The steering command output confirms that the predictive logic generates smooth,
 ### Lap Time Analysis & Iterative Tuning
 
 Beyond pure trajectory tracking, a custom lap-timing logic was integrated directly into the simulation loop. This tool precisely calculates lap times across the generated trajectories, establishing a robust, data-driven baseline. The ultimate goal of this environment is to evaluate how iterative modifications to the vehicle's physical parameters (e.g., suspension setups, track width adjustments, or mass distribution) directly impact overall track performance, allowing for rapid virtual prototyping before physical manufacturing.
-Right now the car is able to lap one circle in 6 seconds at aproximently 9.4 m/s, highlighting how the MPC is working correctly but the there's still room for improvement. 
+Right now the car is able to lap one circle in 6 seconds at approximately 9.4 m/s, highlighting how the MPC is working correctly but the there's still room for improvement. 
 
 ### Limitations & Future Developments
 
