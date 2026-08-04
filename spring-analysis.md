@@ -36,7 +36,7 @@ By solving the linear systems for the constraint reactions, the analysis highlig
 <div align="center">
   <img src="grafici_insieme.png" width="80%">
   <br>
-  <em>Fig. 2:  graph comparing the slider and spherical joint deflection ratios.</em>
+  <em>Fig. 2:  Graph comparing the slider and spherical joint deflection ratios.</em>
 </div>
 <br>
 
@@ -49,7 +49,7 @@ The comparison of the internal stresses, specifically focusing on the bending mo
 <div align="center">
   <img src="fem_vs_maxima.png" width="80%">
   <br>
-  <em>Fig. 3: graph showing the overlapping WxMaxima and FEM lines.</em>
+  <em>Fig. 3: Graph showing the overlapping WxMaxima and FEM lines.</em>
 </div>
 <br>
 
