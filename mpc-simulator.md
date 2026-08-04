@@ -144,6 +144,8 @@ While the current MPC architecture provides a robust baseline for path-tracking,
 
 **[View the complete MATLAB Project and Simulink models on GitHub](https://github.com/michelemarcon14-a11y/michelemarcon14-a11y.github.io/tree/main/model_MPC)**
 
+**[⬅ Return to Portfolio Home](index.html)**
+
 <style>
   footer { display: none !important; }
 </style>
