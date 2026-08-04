@@ -40,7 +40,7 @@ The development process deliberately separated the physical vehicle plant from t
 3.  **Future State Prediction:** Utilizing the internally coded 4-state mathematical model to predict the vehicle's lateral deviation and yaw error, allowing the algorithm to preemptively react to upcoming trajectory curvatures.
 
 **State-Space Plant Definition:**
-The core of the predictive model relies on the accurate mathematical representation of the vehicle's lateral dynamics. Below is the initialization of the continuous-time state-space matrices ($A$, $B$, $C$, $D$) derived from the single-track model equations:
+The core of the predictive model relies on the accurate mathematical representation of the vehicle's lateral dynamics. Below is the initialization of the continuous-time state-space matrices (*A*, *B*, *C*, *D*) derived from the single-track model equations:
 
 ```matlab
 % Vehicle Parameters definition
