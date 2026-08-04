@@ -22,7 +22,7 @@ To evaluate the operational stiffness of the spring, the analytical model was su
 <div align="center">
   <img src="vincoli.png" width="80%">
   <br>
-  <em>Fig. 1: Simulink layout for MPC & PID Driver-in-the-Loop simulator.</em>
+  <em>Fig. 1: A combined image showing the three different boundary conditions.</em>
 </div>
 <br>
 
@@ -36,7 +36,7 @@ By solving the linear systems for the constraint reactions, the analysis highlig
 <div align="center">
   <img src="grafici_insieme.png" width="80%">
   <br>
-  <em>Fig. 1: Simulink layout for MPC & PID Driver-in-the-Loop simulator.</em>
+  <em>Fig. 2:  graph comparing the slider and spherical joint deflection ratios.</em>
 </div>
 <br>
 
@@ -49,7 +49,7 @@ The comparison of the internal stresses, specifically focusing on the bending mo
 <div align="center">
   <img src="fem_vs_maxima.png" width="80%">
   <br>
-  <em>Fig. 1: Simulink layout for MPC & PID Driver-in-the-Loop simulator.</em>
+  <em>Fig. 3: graph showing the overlapping WxMaxima and FEM lines.</em>
 </div>
 <br>
 
