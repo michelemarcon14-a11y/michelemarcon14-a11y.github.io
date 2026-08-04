@@ -39,6 +39,51 @@ The development process deliberately separated the physical vehicle plant from t
 2.  **Handling Actuator Limits:** Explicitly integrating physical steering constraints (rate and angle limits) into the MPC solver to ensure the generated commands are physically executable by the vehicle's steering rack.
 3.  **Future State Prediction:** Utilizing the internally coded 4-state mathematical model to predict the vehicle's lateral deviation and yaw error, allowing the algorithm to preemptively react to upcoming trajectory curvatures.
 
+**State-Space Plant Definition:**
+The core of the predictive model relies on the accurate mathematical representation of the vehicle's lateral dynamics. Below is the initialization of the continuous-time state-space matrices ($A$, $B$, $C$, $D$) derived from the single-track model equations:
+
+```matlab
+% Vehicle Parameters definition
+V = 34/3.6; % Constant speed in [m/s].
+L = 1.54;   % Wheelbase [m]. 
+Cr = 25210; % Cornering stiffness rear [Nm/rad]
+Cf = Cr;    % Cornering stiffness rear [Nm/rad]
+m = 298;    % Veicol mass [Kg]
+lr = 0.722; % Rear wheelbase [m]
+lf = 0.818; % Front wheelbase [m]
+Iz = 134.3; % Yaw inertia [Kg*m^2]
+phi = 0;    % Road angle inclination [deg]
+g = 9.81;   % Gravity's acceleration [m/s^2]
+
+% State-Space Matrices (Continuous)
+A_dyn = [0,         1,              0,                      0                                   ;
+         0, -(2*Cf + 2*Cr)/(m*V), (2*Cf + 2*Cr)/m, (2*Cr*lr - 2*Cf*lf)/(m*V)                    ;
+         0,             0,                  0,                      1                           ;
+         0, (2*Cr*lr - 2*Cf*lf)/(Iz*V), (2*Cf*lf - 2*Cr*lr)/Iz, -(2*Cf*lf^2 + 2*Cr*lr^2)/(Iz*V)];
+
+B1 = [      0       ;
+          2*Cf/m    ;
+            0       ;
+     2*(Cf*lf)/Iz]  ;
+
+B2 = [              0                 ;
+      -(2*Cf*lf - 2*Cr*lr)/(m*V) - V  ;
+                    0                 ;
+      -(2*Cf*lf^2 + 2*Cr*lr^2)/(Iz*V)];
+
+B3 = [  0    ;
+        0    ;
+        0    ;
+      1/Iz]  ;
+
+% Scrittura delle matrici B in una singola 
+
+B_dyn = [ B1 , B2 , B3 ]; 
+
+C_dyn = eye(4);   % Ora misuriamo 4 stati!
+D_dyn = zeros(4,3);
+```
+
 ### System Architecture & Control Layout
 
 <div align="center">
