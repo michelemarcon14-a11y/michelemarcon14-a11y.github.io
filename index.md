@@ -20,9 +20,11 @@ Welcome to my engineering portfolio. Select a project below to explore the techn
 
 ### [Structural Analysis: Helical Spring Boundary Conditions](spring-analysis.html)
 
-<a href="spring-analysis.html">
-  <img src="molla_sfera.png" width="100%" alt="Spring Boundary Conditions Preview">
-</a>
+<div align="center">
+  <a href="spring-analysis.html">
+    <img src="molla_sfera.png" width="35%" alt="Spring Boundary Conditions Preview">
+  </a>
+</div>
 
 **Domain:** Solid Mechanics & Mathematical Modeling | **Tools:** WxMaxima, Marc Mentat (FEM), SolidWorks
 > *Analytical investigation of mechanical boundary constraints on helical springs under multi-axial loading, validated through Finite Element Analysis.*
