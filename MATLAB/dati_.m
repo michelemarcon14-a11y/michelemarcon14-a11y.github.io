@@ -1,0 +1,17 @@
+table = readtable("file_pressioni");
+x = table{1:3,2};
+y = table{1:3,3};
+y2 = table{4:6,3};
+y3 = table{7:9,3};
+figure;
+grid;
+plot( x , y, 'LineWidth' , 1.5 );
+hold on;
+plot( x, y2 , 'LineWidth' , 1.5 );
+grid on;
+plot( x , y3, 'LineWidth' , 1.5 );
+lgd = legend('P(bar) = 0.6894', 'P(bar) = 0.8273', 'P(bar) = 0.9653');
+lgd.FontSize = 15;
+title('VERTICAL RATES');
+xlabel('Load [N]');
+ylabel('Tire Rate [N/mm]');
